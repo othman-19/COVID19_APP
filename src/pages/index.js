@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import axios from 'axios';
 // import { useRef } from 'react';
 import Helmet from 'react-helmet';
 import L from 'leaflet';
@@ -14,7 +15,7 @@ import Map from 'components/Map';
 
 const LOCATION = {
   lat: 38.9072,
-  lng: -77.0369
+  lng: -77.0369,
 };
 const CENTER = [LOCATION.lat, LOCATION.lng];
 const DEFAULT_ZOOM = 2;
@@ -71,7 +72,8 @@ const IndexPage = () => {
     //   marker.bindPopup( popup );
 
     //   setTimeout(() => marker.openPopup(), timeToOpenPopupAfterZoom );
-    //   setTimeout(() => marker.setPopupContent( popupContentGatsby ), timeToUpdatePopupAfterZoom );
+    //   setTimeout(() => marker.setPopupContent( popupContentGatsby ),
+    //                                            timeToUpdatePopupAfterZoom );
     // }, timeToZoom );
   }
 
@@ -79,7 +81,7 @@ const IndexPage = () => {
     center: CENTER,
     defaultBaseMap: 'OpenStreetMap',
     zoom: DEFAULT_ZOOM,
-    mapEffect
+    mapEffect,
   };
 
   return (
