@@ -48,6 +48,13 @@ const IndexPage = () => {
    */
 
   async function mapEffect({ leafletElement: map } = {}) {
+    let response;
+    try {
+      response = await axios.get('https://corona.lmao.ninja/v2/countries');
+    } catch (e) {
+      return;
+    }
+    const { data = [] } = response;
     // if ( !leafletElement ) return;
 
     // const popup = L.popup({
